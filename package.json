@@ -13,15 +13,18 @@
     "moment": "^2.29.4",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.0.7"
   },
   "devDependencies": {
+    "@mdi/font": "^7.1.96",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "prettier": "^2.7.1",
+    "sass": "^1.57.1",
     "vite": "^4.0.0"
   }
 }
