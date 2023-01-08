@@ -12,31 +12,26 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
+  <v-container>
     <h3>{{ title }}</h3>
-    <div class="image-container">
+    <v-row no-gutters justify="center" class="img-row">
       <div class="date">{{ date }}</div>
-      <img :src="image" class="image" />
-    </div>
+      <v-img :src="image" class="ma-2" max-width="800" max-height="700" />
+    </v-row>
     <p class="description">{{ description }}</p>
-  </div>
+  </v-container>
 </template>
 
 <style scoped>
-.container {
-  margin: auto;
-  text-align: center;
-}
-.image {
-  max-width: 800px;
-  max-height: 700px;
-  margin: 10px 0;
+.img-row {
+  position: relative;
 }
 .date {
   position: absolute;
   top: 15px;
   left: 10px;
   z-index: 1;
+  color: white;
 }
 .description {
   text-align: start;

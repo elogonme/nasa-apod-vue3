@@ -45,16 +45,29 @@ const incrementDate = () => {
 <template>
   <h3>{{ title }}</h3>
   <form>
-    <button class="btn" @click.prevent="decrementDate">Day Before</button>
-    <input type="date" v-model="dateToGet" />
-    <button class="btn" @click.prevent="incrementDate" :disabled="isDateToday">
-      Next Day
-    </button>
+    <v-btn
+      class="mx-4"
+      icon="mdi-chevron-left"
+      small
+      @click.prevent="decrementDate"
+    ></v-btn>
+    <input class="date-picker" type="date" v-model="dateToGet" />
+    <v-btn
+      class="mx-4"
+      icon="mdi-chevron-right"
+      small
+      @click.prevent="incrementDate"
+      :disabled="isDateToday"
+    >
+    </v-btn>
   </form>
 </template>
 
 <style scoped>
 .btn {
   margin: 0 5px;
+}
+.date-picker {
+  height: 32px;
 }
 </style>
