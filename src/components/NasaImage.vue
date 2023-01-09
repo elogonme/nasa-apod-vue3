@@ -41,7 +41,7 @@ onMounted(() => {
               :src="hdurl"
               class="ma-2"
               @click="showHd"
-              max-height="85vh"
+              max-height="75vh"
               @load="loadingImage = false"
             />
           </v-col>
