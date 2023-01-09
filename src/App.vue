@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 import { useTheme } from "vuetify";
 import { useLocale } from "vuetify";
 
-const { current, t } = useLocale();
+const { current } = useLocale();
 
 const theme = useTheme();
 const switchDarkMode = () =>
@@ -19,12 +19,16 @@ const changeLocale = () => {
 
 <template>
   <v-container>
-    <p>{{ t("message.hello") }}</p>
+    <!-- <p>{{ $t("views.app.hello_world") }}</p> -->
     <nav>
       <v-icon icon="mdi-home-outline" />
-      <RouterLink to="/" class="nav-link"> Home</RouterLink>
+      <RouterLink to="/" class="nav-link">{{
+        $t("views.app.home")
+      }}</RouterLink>
       <v-icon icon="mdi-information-outline" />
-      <RouterLink to="/about" class="nav-link">About</RouterLink>
+      <RouterLink to="/about" class="nav-link">{{
+        $t("views.app.about")
+      }}</RouterLink>
       <v-btn
         flat
         text

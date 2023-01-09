@@ -16,7 +16,7 @@ onMounted(() => {
     <h3>{{ title }}</h3>
     <v-row no-gutters justify="center" class="img-row">
       <div class="date">{{ date }}</div>
-      <v-img :src="image" class="ma-2" max-width="800" max-height="700" />
+      <v-img :src="image" class="ma-2" max-width="1000" max-height="1000" />
     </v-row>
     <p class="description">{{ description }}</p>
   </v-container>

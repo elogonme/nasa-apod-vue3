@@ -2,11 +2,11 @@ import { createApp } from "vue";
 import { createPinia } from "pinia";
 import { createVueI18nAdapter } from "vuetify/locale/adapters/vue-i18n";
 import { createI18n, useI18n } from "vue-i18n";
-
 import App from "./App.vue";
 import router from "./router";
 
 // import "./assets/main.css";
+// Import vuetify component messaages translations
 import { fr, en } from "vuetify/locale";
 
 // Vuetify
@@ -17,17 +17,27 @@ import * as directives from "vuetify/directives";
 import { aliases, mdi } from "vuetify/iconsets/mdi";
 import "@mdi/font/css/materialdesignicons.css";
 
+// Import custom translations from csv file, parse and load
+const parsed = await import("./translations.csv");
+const enTranslations = parsed.default
+  .map((i) => ({ [i.key]: i.en }))
+  .reduce(function (result, current) {
+    return Object.assign(result, current);
+  }, {});
+
+const frTranslations = parsed.default
+  .map((i) => ({ [i.key]: i.fr }))
+  .reduce(function (result, current) {
+    return Object.assign(result, current);
+  }, {});
+
 const messages = {
   en: {
-    message: {
-      hello: "Hello world!",
-    },
+    ...enTranslations,
     $vuetify: en,
   },
   fr: {
-    message: {
-      hello: "Bonjour le monde!",
-    },
+    ...frTranslations,
     $vuetify: fr,
   },
 };
@@ -54,9 +64,6 @@ const vuetify = createVuetify({
   },
   locale: {
     adapter: createVueI18nAdapter({ i18n, useI18n }, { useScope: "global" }),
-    // locale: "fr",
-    // fallback: "en",
-    // messages: { fr, en },
   },
 });
 

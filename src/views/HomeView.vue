@@ -5,7 +5,7 @@ import NasaImage from "../components/NasaImage.vue";
 
 <template>
   <div class="home">
-    <h1>NASA Daily Picture</h1>
+    <h1>{{ $t("views.home_view.nasa_daily") }}</h1>
     <date-selector />
     <nasa-image />
   </div>

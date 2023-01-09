@@ -1,0 +1,6 @@
+key,en,fr
+views.app.hello_world,Hello world!,Bonjour le monde!
+views.app.home,Home,Accueil
+views.app.about,About,À propos de
+views.home_view.nasa_daily,NASA Daily Picture,Image quotidienne de la NASA
+component.date_selector.select_date,Select date,Sélectionner une date

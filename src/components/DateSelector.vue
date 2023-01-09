@@ -1,15 +1,18 @@
 <script setup>
 import { ref, computed, onMounted, watchEffect } from "vue";
 import { useNasaImage } from "../stores/nasaImage";
+import { useLocale } from "vuetify";
+
+const { t } = useLocale();
 import moment from "moment";
 
 const store = useNasaImage();
-const title = ref("Select Date");
+const title = ref(t("component.date_selector.select_date"));
+const dateToGet = ref("");
+
 const isDateToday = computed(
   () => moment().format("YYYY-MM-DD") === dateToGet.value
 );
-
-const dateToGet = ref("");
 
 onMounted(() => {
   dateToGet.value = moment().format("YYYY-MM-DD");
@@ -19,17 +22,6 @@ onMounted(() => {
 watchEffect(() => {
   store.getImage(dateToGet.value);
 });
-
-const formatDate = (d) => {
-  let month = "" + (d.getMonth() + 1);
-  let day = "" + d.getDate();
-  let year = d.getFullYear();
-
-  if (month.length < 2) month = "0" + month;
-  if (day.length < 2) day = "0" + day;
-
-  return [year, month, day].join("-");
-};
 
 const decrementDate = () => {
   dateToGet.value = moment(dateToGet.value)
