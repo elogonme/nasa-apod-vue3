@@ -7,7 +7,7 @@ const { t } = useLocale();
 import moment from "moment";
 
 const store = useNasaImage();
-const title = ref(t("component.date_selector.select_date"));
+// const title = ref(t("component.date_selector.select_date"));
 const dateToGet = ref("");
 
 const isDateToday = computed(
@@ -35,7 +35,7 @@ const incrementDate = () => {
 </script>
 
 <template>
-  <h3>{{ title }}</h3>
+  <h3>{{ t("component.date_selector.select_date") }}</h3>
   <form>
     <v-btn
       class="mx-4"

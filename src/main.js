@@ -6,6 +6,7 @@ import App from "./App.vue";
 import router from "./router";
 
 // import "./assets/main.css";
+
 // Import vuetify component messaages translations
 import { fr, en } from "vuetify/locale";
 
