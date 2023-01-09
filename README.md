@@ -2,6 +2,7 @@
 
 This template should help get you started developing with Vue 3 in Vite, Pinia store, vuetify3, i18n with translations loaded from csv file.
 App shows NASA Astronomy Picture of the Day (APOD).
+<https://vue-nasa-apod.netlify.app>
 
 ## Recommended IDE Setup
 
