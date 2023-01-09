@@ -1,6 +1,7 @@
 # nasa-apod-vue3
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 in Vite, Pinia store, vuetify3, i18n with translations loaded from csv file.
+App shows NASA Astronomy Picture of the Day (APOD).
 
 ## Recommended IDE Setup
 
@@ -15,6 +16,9 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ```sh
 npm install
 ```
+
+Create `config.json` in `src` folder.
+Add `apiKey: <your-key>` for NASA APOD api in `config.json`.
 
 ### Compile and Hot-Reload for Development
 
