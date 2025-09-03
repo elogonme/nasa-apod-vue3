@@ -8,6 +8,18 @@ const apiClient = axios.create({
     Accept: "application/json",
     "Content-Type": "application/json",
   },
+  // normalize in case something injects http
+  transformRequest: [
+    (data, headers) => {
+      if (apiClient.defaults.baseURL.startsWith("http://")) {
+        apiClient.defaults.baseURL = apiClient.defaults.baseURL.replace(
+          "http://",
+          "https://"
+        );
+      }
+      return data;
+    },
+  ],
 });
 
 export default {
