@@ -1,9 +1,9 @@
 import axios from "axios";
 // import config from "../config.json";
 const apiKey = import.meta.env.VITE_NASA_API_KEY;
+
 const apiClient = axios.create({
-  baseURL: "https://api.nasa.gov/planetary/apod/",
-  withCredentials: false,
+  baseURL: import.meta.env.VITE_API_BASE,
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
